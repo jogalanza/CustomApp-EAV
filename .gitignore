@@ -398,3 +398,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/CustomApp.Host/Plugins/Plugin.Default/component/dist
+/CustomApp.Host/wwwroot
