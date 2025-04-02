@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 @click="LoadComponent">Main App Host Component</h1>
+    <q-btn label="Load component" @click="LoadComponent">Main App Host Component</q-btn>
     <Suspense>
       <template #default>
         <component :is="remoteComponent" v-if="remoteComponent" />
@@ -41,19 +41,19 @@ export default defineComponent({
           }
 
           const sharedScope = {
-              default: {
-                vue: {
-                  get: () => Promise.resolve(() => Vue),
-                  from: "hostApp",
-                  eager: true,
-                  loaded: 1
-                },
-                quasar: { get: () => Promise.resolve(() => import('quasar')), from: 'hostApp', eager: true, loaded: 1 }
-              }
+            default: {
+              vue: {
+                get: () => Promise.resolve(() => Vue),
+                from: "hostApp",
+                eager: true,
+                loaded: 1
+              },
+              quasar: { get: () => Promise.resolve(() => import('quasar')), from: 'hostApp', eager: true, loaded: 1 }
             }
+          }
 
-            container.init(sharedScope);
-            resolve(container);
+          container.init(sharedScope);
+          resolve(container);
         };
         script.onerror = () => reject(new Error(`Failed to load remote script: ${url}`));
         document.head.appendChild(script);
@@ -61,13 +61,14 @@ export default defineComponent({
     };
 
     const LoadComponent = async () => {
-      const remoteUrl = "https://localhost:7053/Plugins/Plugin.Default/component/dist/remoteEntry.js";
-          const scope = 'remoteApp'; // Matches ModuleFederationPlugin 'name'
+      //const remoteUrl = "http://localhost:8082/Plugins/Plugin.Default/component/dist/remoteEntry.js";
+      const remoteUrl = "http://localhost:9000/remoteEntry.js";
+      const scope = 'remoteApp'; // Matches ModuleFederationPlugin 'name'
 
-          const container = await loadRemote(remoteUrl, scope);
-          const moduleFactory = await container.get('./CustomControl');
-          const module = moduleFactory();
-          remoteComponent.value = module.default || module;
+      const container = await loadRemote(remoteUrl, scope);
+      const moduleFactory = await container.get('./RemoteComponent'); //await container.get('./CustomControl');
+      const module = moduleFactory();
+      remoteComponent.value = module.default || module;
     }
 
     // Load remote component on mount
@@ -75,7 +76,7 @@ export default defineComponent({
       try {
         nextTick(async () => {
           //test
-          
+
 
           // const response = await fetch('/api/widgets');
           // const widgets = await response.json();

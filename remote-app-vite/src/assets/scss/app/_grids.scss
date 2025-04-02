@@ -1,0 +1,299 @@
+.fixed-table{
+  .q-table{
+    table-layout: fixed;
+
+    tbody{
+      td{
+        // white-space: break-spaces;
+      }
+    }
+
+    td{
+      padding: 0px 16px;
+    }
+  }
+}
+
+.q-table{
+  tbody{
+    td{
+      // white-space: break-spaces;
+      padding: 0px 16px;
+    }
+  }
+}
+
+.q-table--dense{
+  .q-table{
+    td{
+      padding: 0px 16px;
+    }
+  }
+}
+
+td{
+  max-width: 300px;
+  overflow: hidden;
+}
+
+.inline-grid-edit {
+  th,
+  td,
+  div {
+    font-size: 1em !important;
+    text-align: left;
+  }
+
+  
+
+  thead tr th {
+    font-weight: bold;
+    font-size: 1em !important;
+  }
+}
+
+.q-table{
+    th{
+        font-weight: bold;
+    }
+}
+.sticky-header {
+  thead {
+    tr {
+      th {
+        position: sticky;
+        z-index: 5;
+        top: 0px;
+        background: white;
+      }
+    }
+  }
+}
+
+.sticky-row-header {
+  thead {
+    tr {
+      th {
+        &:first-child {
+          z-index: 6;
+          left: 0px;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        &:first-child {
+          position: sticky;
+          z-index: 4;
+          left: 0px;
+          background: white;
+        }
+      }
+    }
+  }
+}
+
+.sticky-row {
+  tbody {
+    tr {
+      position: sticky;
+      // z-index: 3;
+      top: 48px;
+      background: white;
+      z-index: 3;
+    }
+  }
+}
+
+
+.non-sticky-row {
+  thead {
+    tr {
+      position: inherit;
+        z-index: inherit;
+    }
+  }
+
+  tbody {
+    tr {
+      position: inherit;
+      z-index: inherit;
+    }
+  }
+}
+
+
+
+.sticky-action-col {
+    thead {
+      tr {
+        th {
+          &:last-child {
+              position: sticky;
+            z-index: 5;
+            right: 0px;
+          }
+        }
+      }
+    }
+  
+    tbody {
+      tr {
+        td {
+          &:last-child {
+            position: sticky;
+            z-index: 2;
+            right: 0px;
+            background: white;
+          }
+        }
+      }
+    }
+  }
+
+  .non-sticky-action-col {
+    thead {
+      tr {
+        th {
+          &:last-child {
+              background: inherit;
+              right: inherit;
+          }
+        }
+      }
+    }
+  
+    tbody {
+      tr {
+        td {
+          &:last-child {
+            position: inherit;
+            background: inherit;
+          }
+        }
+      }
+    }
+  }
+
+.q-table__grid-content {
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+.q-table__top {
+  padding: 0px !important;
+  // padding-top: 0px;
+  .QToolbar{
+    padding: 0px;
+  }
+}
+
+.loading-container {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+// .q-table__bottom--nodata{
+//   position: absolute;
+//   right: 0px;
+//   left: 0px;
+//   bottom: 8px;
+//   top: 40px;
+
+//   div{
+//     width: 100%;
+//     text-align: center;
+//     font-weight: bold;
+//   }
+// }
+
+.sticky-bg-color {
+  background: white !important;
+}
+
+.q-markup-table{
+  &.card-history{
+    .header{
+      padding-top: 0px;
+      padding-bottom: 0px;
+      padding-left: 0px;
+      border-top: 1px solid #ddd;
+
+      span{
+        background: #ddd;
+        border-bottom-right-radius: 26px;
+        padding-right: 16px;
+      }
+    }
+  }
+}
+
+.body--dark {
+  .sticky-bg-color {
+    background: var(--q-dark) !important;
+  }
+
+  .sticky-header {
+    thead {
+      tr {
+        th {
+          background: var(--q-dark);
+        }
+      }
+    }
+  }
+
+  .sticky-row-header {  
+    tbody {
+      tr {
+        td {
+          &:first-child {
+            background: var(--q-dark);
+          }
+        }
+      }
+    }
+  }
+
+  .sticky-row {
+    tbody {
+      tr {
+        td {
+          background: var(--q-dark);
+        }
+      }
+    }
+  }
+
+  .sticky-action-col {
+    tbody {
+      tr {
+        td {
+          &:last-child {
+            background: var(--q-dark);
+          }
+        }
+      }
+    }
+  }
+
+  .q-markup-table{
+    &.card-history{
+      .header{
+        border-top: 1px solid #404040;
+  
+        span{
+          background: #404040;
+        }
+      }
+    }
+  }
+}

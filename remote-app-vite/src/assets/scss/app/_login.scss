@@ -1,0 +1,33 @@
+.login{
+    height: 100vh;    
+    padding-top: 64px;
+    background-size: cover !important;
+
+    @media screen and (max-width: $small) {
+        margin-top: -64px;
+        padding-top:0px;
+    }
+
+    .login-card{
+        width: 350px;
+        margin-top: 0px;
+        background: rgba(255,255,255,0.9);
+        min-height: 450px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 64px;
+        margin-bottom: 16px;
+        border-radius: 8px;
+
+        @media screen and (max-width: $small) {
+            border-radius: 0px !important;
+            padding-top:0px;
+            height: 100%;
+            width: 100% !important;
+        }
+
+        .extra-links{
+            font-size:12px;
+        }
+    }
+}

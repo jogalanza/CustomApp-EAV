@@ -19,8 +19,21 @@ builder.Services.AddScoped<IDbConnection>(_ =>
     new SqlConnection("Server=localhost;Database=PluginAppDb;Trusted_Connection=True;"));
 builder.Services.AddSingleton<IDbInitializer, DbInitializer>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()    // Allows all origins (*)
+              .AllowAnyMethod()    // Allows all HTTP methods (GET, POST, etc.)
+              .AllowAnyHeader();   // Allows all headers
+    });
+});
+
 
 var app = builder.Build();
+
+// Enable CORS middleware
+app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

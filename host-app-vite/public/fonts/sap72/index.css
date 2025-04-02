@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'SAP72';
+    src: url('72-Regular-full.woff2') format('woff2'),
+         url('72-Regular-full.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SAP72-Bold';
+    src: url('72-Bold-full.woff2') format('woff2'),
+         url('72-Bold-full.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SAP72-Black';
+    src: url('72-Black-full.woff2') format('woff2'),
+         url('72-Black-full.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,34 @@
+{
+  "name": "host-app-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && copy-root.bat",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@microsoft/signalr": "^8.0.7",
+    "@quasar/extras": "^1.16.17",
+    "axios": "^1.8.4",
+    "highcharts": "^12.1.2",
+    "highcharts-vue": "^2.0.1",
+    "js-file-download": "^0.4.12",
+    "moment": "^2.30.1",
+    "pinia": "^3.0.1",
+    "quasar": "^2.18.1",
+    "router": "^2.2.0",
+    "tiny-emitter": "^2.1.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.4.0",
+    "@quasar/vite-plugin": "^1.9.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "sass": "^1.86.1",
+    "stylus": "^0.64.0",
+    "vite": "^6.2.0"
+  }
+}

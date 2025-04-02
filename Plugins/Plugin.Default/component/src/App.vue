@@ -76,20 +76,20 @@
     </q-drawer>
 
     <q-page-container>
-      <HelloWorld />
+      <CustomControl />
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
 import { ref } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import CustomControl from './components/CustomControl.vue'
 
 export default {
   name: 'LayoutDefault',
 
   components: {
-    HelloWorld
+    CustomControl
   },
 
   setup () {

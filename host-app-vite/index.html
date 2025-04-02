@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      XMAP
+    </title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Archivo&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
+      rel="stylesheet"
+    />
+    <link
+      href="/fonts/daxpro/index.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/fonts/sap72/index.css"
+      rel="stylesheet"
+    />
+    <script src="/config/index.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/apexcharts.js"></script>
+
+    <link
+      rel="manifest"
+      href="/manifest.json"
+      crossorigin="use-credentials"
+    />
+    <!-- See https://goo.gl/qRE0vM -->
+    <meta name="theme-color" content="#0A0A0A" />
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes" />
+
+
+    <style>
+      html {
+        font-family: Roboto, Montserrat, Archivo !important;
+        overflow: hidden !important;
+      }
+
+      body {
+        font-family: "SAP72", "DaxPro", "Archivo",  "Roboto", "Montserrat",   "-apple-system",
+          "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        overflow: hidden;
+        cursor: default;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+        /* Remove scrollbar space ebe3e3 */
+        background: transparent;
+        /* Optional: just make scrollbar invisible */
+        margin-top: 50px;
+        height: 10px;
+      }
+
+      /* Optional: show position indicator in red */
+      ::-webkit-scrollbar-thumb {
+        /* background: #5b9bd5;
+          background: #ccc; 
+          background: #847f7f; */
+        /* background: rgba(12, 110, 221, 0.5); */
+        background: rgba(0, 0, 0, 0.2);
+        height: 6px;
+        width: 6px;
+        border-radius: 8px;
+      }
+
+      ::-webkit-input-placeholder {
+        color: peachpuff;
+        font-size: 13px;
+      }
+
+      ::-moz-placeholder {
+        color: peachpuff;
+        font-size: 13px;
+      }
+
+      :-ms-input-placeholder {
+        color: peachpuff;
+        font-size: 13px;
+      }
+
+      ::placeholder {
+        color: peachpuff;
+        font-size: 13px;
+      }
+
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      textarea {
+        resize: none !important;
+      }
+
+      .bg-green-etc {
+        background: #64a70b !important;
+      }
+
+      sup {
+        font-size: 11px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
