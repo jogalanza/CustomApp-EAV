@@ -19,6 +19,7 @@ export default defineConfig({
       exposes: {
         './Button': './src/components/Button.vue', // Expose a component
         './Home': './src/views/Home.vue',
+        './Error404': './src/views/Error404.vue',
       },
       shared: ['vue'], // Shared dependencies
     }),

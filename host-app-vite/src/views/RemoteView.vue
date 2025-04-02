@@ -84,7 +84,7 @@ const loadRemote = async () => {
 
     console.warn("sss", remoteModule, window["remote-app"]);
     // Get the exposed QuasarButton module
-    const moduleFactory = await remoteModule.get('./Home');
+    const moduleFactory = await remoteModule.get('./Button');
     const module = await moduleFactory();
 
     console.warn("remote comp", module);
