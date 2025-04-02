@@ -1,5 +1,5 @@
 <template>
-  <q-dialog v-model="dialog">
+  <QDialog v-model="dialog">
     <QCard>
       <QToolbar>
         <QToolbarTitle class="clip">{{ title }}</QToolbarTitle>
@@ -23,7 +23,7 @@
         />
       </QCard-actions>
     </QCard>
-  </q-dialog>
+  </QDialog>
 </template>
 
 <script>

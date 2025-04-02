@@ -8,7 +8,7 @@
     >
       <!-- lhh LpR lff -->
       <QHeader class="inner-board-header">
-        <q-linear-progress indeterminate v-show="loading" color="green" />
+        <QLinearProgress indeterminate v-show="loading" color="green" />
         <slot name="header"> </slot>
       </QHeader>
 
@@ -25,9 +25,9 @@
       </QDrawer>
 
       <QPageContainer style="height: 100%">
-        <q-page class="q-pa-none" style="height:100%">
+        <QPage class="q-pa-none" style="height:100%">
           <slot name="default"> </slot>
-        </q-page>
+        </QPage>
       </QPageContainer>
     </QLayout>
   </Board>

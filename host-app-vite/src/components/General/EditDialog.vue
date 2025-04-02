@@ -1,5 +1,5 @@
 <template>
-    <q-dialog v-model="_dialog" position="right" :persistent="persistent" @hide="_dialog = $event">
+    <QDialog v-model="_dialog" position="right" :persistent="persistent" @hide="_dialog = $event">
         <QCard class="edit-dialog" style="height: 100%; max-height: 100%; width: 100vw; overflow: hidden;" square>
             <slot name="header">
                 <QToolbar>
@@ -19,7 +19,7 @@
                 </slot>
             </QCard-actions>
         </QCard>
-    </q-dialog>
+    </QDialog>
 </template>
 
 <style lang="scss">

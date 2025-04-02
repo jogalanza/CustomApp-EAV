@@ -138,7 +138,7 @@
         </template>
 
 
-        <q-dialog v-model="dialog" persistent>
+        <QDialog v-model="dialog" persistent>
             <QCard class="bowler-comment-fs comment-card-fs">
                 <QToolbar class="chart-toolbar">
                     <!-- <QBtn round flat icon="o_download" dense><QTooltip>Download</QTooltip></QBtn> -->
@@ -223,7 +223,7 @@
                     </QItem>
                 </QList>
             </QCard>
-        </q-dialog>
+        </QDialog>
     </QList>
 </template>
 

@@ -36,6 +36,12 @@ const routes = [
         component: () => import("../views/RemoteView.vue"),
       },
       {
+        path: "/bowler",
+        name: "Bowler",
+        meta: { roles: [1] },
+        component: () => import("../views/RemoteView.vue"),
+      },
+      {
         path: "/training",
         name: "Training",
         meta: { roles: [1] },

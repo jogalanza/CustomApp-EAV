@@ -82,7 +82,7 @@
       </QCardSection>
     </QCard>
 
-    <q-dialog v-model="trainingDialog" persistent>   
+    <QDialog v-model="trainingDialog" persistent>   
     <QCard style="height: 95vh; width: 95vw; max-width: 100vw">
       <QToolbar>
         <QToolbarTitle>{{ activeTraining.Title }}</QToolbarTitle>
@@ -95,7 +95,7 @@
     </QCard>         
       
       
-    </q-dialog>
+    </QDialog>
   </BoardLayout>
 </template>
 
@@ -150,12 +150,13 @@ import fileDownload from "js-file-download";
 import { useHelper } from "../composables/helper";
 import { useQuasar } from "quasar"
 import { useUser } from "../store/user";
+import BoardLayout from "../components/General/BoardLayout.vue";
 
 export default defineComponent({
   name: "ManageSites",
   emits: ["edit", "addnew"],
   components: {
-    //
+    BoardLayout
   },
   setup(props, ctx) {
     const GetLocaleString = inject("GetLocaleString");

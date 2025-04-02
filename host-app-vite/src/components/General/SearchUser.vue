@@ -1,11 +1,11 @@
 <template>
-  <q-dialog v-model="dialog" persistent>
+  <QDialog v-model="dialog" persistent>
     <QCard class="find-employee">
-      <q-linear-progress
+      <QLinearProgress
         color="red"
         v-if="loading"
         indeterminate
-      ></q-linear-progress>
+      ></QLinearProgress>
       <QToolbar>
         <QToolbarTitle>{{ title }}</QToolbarTitle>
         <QSpace />
@@ -86,7 +86,7 @@
         />
       </QCard-actions>
     </QCard>
-  </q-dialog>
+  </QDialog>
 </template>
 
 <style scoped lang="scss">

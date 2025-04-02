@@ -1,5 +1,5 @@
 <template>
-  <q-dialog v-model="dialog">
+  <QDialog v-model="dialog">
     <QCard>
       <!-- <QToolbar>
                 <QSpace />
@@ -72,7 +72,7 @@
         </QList>
       </QCardSection>
     </QCard>
-  </q-dialog>
+  </QDialog>
 </template>
 
 <script>

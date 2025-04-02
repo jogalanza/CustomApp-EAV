@@ -47,7 +47,7 @@
       <QTooltip>{{ displayValue }}</QTooltip>
     </q-chip>
 
-    <q-dialog v-model="dialog">
+    <QDialog v-model="dialog">
       <QCard style="min-width: 300px; width: 500px">
         <QToolbar class="q-pt-sm q-pb-none">
           <QToolbarTitle class="clip"
@@ -266,7 +266,7 @@
           />
         </QCard-actions>
       </QCard>
-    </q-dialog>
+    </QDialog>
   </div>
 </template>
 

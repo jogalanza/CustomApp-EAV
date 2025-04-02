@@ -1,5 +1,5 @@
 <template>
-  <q-dialog :maximized="maximized" v-model="dialog" :position="position">
+  <QDialog :maximized="maximized" v-model="dialog" :position="position">
     <QCard class="no-scroll board-bg-color">
       <QCardSection class="q-pa-none main-header">
         <QToolbar>
@@ -32,7 +32,7 @@
         <slot></slot>
       </Board>
     </QCard>
-  </q-dialog>
+  </QDialog>
 </template>
 
 <style scoped>

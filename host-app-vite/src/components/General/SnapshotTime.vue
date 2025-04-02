@@ -1,5 +1,5 @@
 <template>
-  <q-dialog v-model="dialog">
+  <QDialog v-model="dialog">
     <QCard style="min-width: 100px">
       <QCardSection>
         <QList>
@@ -24,7 +24,7 @@
         </QList>
       </QCardSection>
     </QCard>
-  </q-dialog>
+  </QDialog>
 </template>
 
 <script>

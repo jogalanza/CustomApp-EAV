@@ -83,7 +83,7 @@
 
     </QList>
 
-    <q-dialog v-model="dialog" persistent>
+    <QDialog v-model="dialog" persistent>
       <QCard class="comment-card-fs">
         <QToolbar class="chart-toolbar">
           <!-- <QBtn round flat icon="o_download" dense><QTooltip>Download</QTooltip></QBtn> -->
@@ -109,7 +109,7 @@
           </QItem>
         </QList>
       </QCard>
-    </q-dialog>
+    </QDialog>
   </MultiView>
 </template>
 

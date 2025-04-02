@@ -1,6 +1,6 @@
 <template>
   <QCard style="width: 100%">
-  <q-linear-progress v-if="loading" indeterminate></q-linear-progress>
+  <QLinearProgress v-if="loading" indeterminate></QLinearProgress>
     <QCardSection :class="titleClass">{{ title }}</QCardSection>
     <QCardSection class="q-py-none">
       <apexchart

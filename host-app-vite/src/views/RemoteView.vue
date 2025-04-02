@@ -1,12 +1,37 @@
+
+<template>
+  <BoardLayout title="Manage Credentials">
+    <QCardSection style="height:100%;overflow-y:auto">
+      <h1>Host App with Quasar</h1>
+      <QBtn color="secondary" label="Load Remote" @click="loadRemote" />
+      <Suspense>
+        <template #default>
+          <component :is="remoteComponent" :key="renderKey" />
+        </template>
+        <template #fallback>
+          Loading
+        </template>
+      </Suspense>
+      
+    </QCardSection>
+  </BoardLayout>
+  <div>
+
+  </div>
+</template>
+
 <script setup>
-import { defineAsyncComponent, ref, nextTick, computed } from 'vue';
+import { defineAsyncComponent, ref, onMounted } from 'vue';
+
+defineProps({
+  title: String
+})
 
 // Reactive state for the remote component
 const BoardLayout = defineAsyncComponent(() => import("../components/General/BoardLayout.vue"))
 const remoteComponent = ref(null);
 const renderKey = ref(1);
 
-const xComponent = computed(() => remoteComponent.value );
 
 const loadRemoteScript = (url, scope) => {
   return new Promise((resolve, reject) => {
@@ -26,25 +51,27 @@ const loadRemoteScript = (url, scope) => {
         return;
       }
 
-      const sharedScope = {
-        default: {
-          vue: {
-            get: () => Promise.resolve(() => import('vue')),
-            from: "host-app",
-            eager: true,
-            loaded: 1
-          },
-          quasar: { get: () => Promise.resolve(() => import('quasar')), from: 'host-app', eager: true, loaded: 1 }
-        }
-      }
-
-      container.init(sharedScope);
+      container.init(GetSharedScope());
       resolve(container);
     };
     script.onerror = () => reject(new Error(`Failed to load remote script: ${url}`));
     document.head.appendChild(script);
   });
 };
+
+const GetSharedScope = () => {
+  return {
+    default: {
+      vue: {
+        get: () => Promise.resolve(() => import('vue')),
+        from: "host-app",
+        eager: true,
+        loaded: 1
+      },
+      quasar: { get: () => Promise.resolve(() => import('quasar')), from: 'host-app', eager: true, loaded: 1 }
+    }
+  }
+}
 
 // Method to load the remote module dynamically
 const loadRemote = async () => {
@@ -65,22 +92,8 @@ const loadRemote = async () => {
     // Since remoteEntry.js is an ES module, we need to import it dynamically
     const remoteModule = await import(/* @vite-ignore */ remoteUrl);
 
-    // Initialize the remote module with shared scope
-    const sharedScope = {
-      vue: {
-        '*': {
-          from: 'host-app',
-          get: () => () => import('vue'),
-        },
-      },
-      quasar: {
-        '*': {
-          from: 'host-app',
-          get: () => () => import('quasar'),
-        },
-      },
-    };
-    await remoteModule.init(sharedScope);
+    // Initialize the remote module with shared scope   
+    await remoteModule.init(GetSharedScope());
 
     console.warn("sss", remoteModule, window["remote-app"]);
     // Get the exposed QuasarButton module
@@ -89,51 +102,20 @@ const loadRemote = async () => {
 
     console.warn("remote comp", module);
 
-    // remoteComponent.value = await new Promise((resolve, reject) => {
-    //   resolve(module.default);
-    // });
-
     // Set the component
     remoteComponent.value = defineAsyncComponent(() => Promise.resolve(module));
 
-    nextTick(() => {
-      console.log('Component set:', remoteComponent.value)
-      renderKey.value++;
-    });
   } catch (error) {
     console.error('Failed to load remote module:', error);
   }
 };
 
-const loadRemote_V2 = async () => {
-  try {
-    //const remoteUrl = 'http://localhost:5001/assets/remoteEntry.js';
-    const remoteUrl = 'https://localhost:7053/Plugins/Plugin.Default/component/dist/assets/remoteEntry.js';
-    await import(/* @vite-ignore */ remoteUrl);
-    console.warn(window['remote-app']);
-    const module = await window['remote-app'].get('./QuasarButton');
-    console.warn('module', module);
-    const component = module().default;
-    console.warn('component', component);
-    remoteComponent.value = defineAsyncComponent(() => Promise.resolve(component));
-  } catch (error) {
-    console.error('Failed to load remote module:', error);
-  }
-};
+onMounted(async() => {
+  await loadRemote();
+})
+
 </script>
 
-<template>
-  <BoardLayout title="Manage Credentials">
-    <QCardSection  style="height:100%;overflow-y:auto">
-      <h1>Host App with Quasar</h1>
-      <QBtn color="secondary" label="Load Remote" @click="loadRemote" />
-      <component :is="xComponent" :key="renderKey" />
-    </QCardSection>
-  </BoardLayout>
-  <div>
-
-  </div>
-</template>
 
 <style scoped>
 .logo {

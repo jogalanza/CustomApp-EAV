@@ -1,6 +1,6 @@
 <template>
   <QCard flat class="graph-card q-pb-md">
-    <!-- <q-linear-progress indeterminate v-show="loading > 0" color="green" /> -->
+    <!-- <QLinearProgress indeterminate v-show="loading > 0" color="green" /> -->
     <QToolbar class="chart-toolbar q-py-sm q-px-md">
       <slot name="chart-toolbar">
         <q-spinner v-if="loading > 0" color="white" size="20px" />
@@ -54,9 +54,9 @@
     </div>
 
 
-    <q-dialog v-model="dialog" persistent>
+    <QDialog v-model="dialog" persistent>
       <QCard class="graph-card-fs">
-        <!-- <q-linear-progress indeterminate v-show="loading > 0" color="green" /> -->
+        <!-- <QLinearProgress indeterminate v-show="loading > 0" color="green" /> -->
         <QToolbar class="chart-toolbar">
           <!-- <QBtn round flat icon="o_download" dense><QTooltip>Download</QTooltip></QBtn> -->
           <div class="card-title" style="font-size: 2em;">{{ CalcTitle }}</div>
@@ -97,7 +97,7 @@
           </div>
         </QCardSection>
       </QCard>
-    </q-dialog>
+    </QDialog>
   </QCard>
 </template>
 

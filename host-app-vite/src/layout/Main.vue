@@ -25,11 +25,10 @@
             fit="fill"
             width="144px"
             height="54px"
-            style="min-width: 144px; margin-top: -6px;"
+            style="width: 144px; height: 30px; margin-top: auto; margin-bottom: auto;"
           />
-          <span class="q-ml-md text-etc-green" :style="`font-size: 2em; font-family: sap72-bold; letter-spacing: -4px; margin-left: ${(mobileView ? 0 : 24)}px`"
-            >XMAP</span
-          >
+          <span class="q-ml-md text-etc-green" :style="`font-size: 2em; font-family: sap72-bold; letter-spacing: 0px; margin-left: ${(mobileView ? 0 : 24)}px`"
+            >IT-GDC</span>
         </QToolbarTitle>
         <QSpace v-if="mobileView" />
         <QBtn
@@ -346,7 +345,7 @@
       <router-view></router-view>
     </QPageContainer>
 
-    <!-- <q-dialog
+    <!-- <QDialog
       v-model="mainStore.Installable"
       seamless
       :position="mobileView ? 'top' : 'bottom'"
@@ -370,9 +369,9 @@
           />
         </QCardSection>
       </QCard>
-    </q-dialog> -->
+    </QDialog> -->
 
-    <!-- <q-dialog
+    <!-- <QDialog
       v-model="mainStore.hasNewUpdates"
       seamless
       :position="mobileView ? 'top' : 'bottom'"
@@ -392,7 +391,7 @@
           <QBtn label="Refresh" text-color="green" flat @click="RefreshApp" unelevated />
         </QCardSection>
       </QCard>
-    </q-dialog> -->
+    </QDialog> -->
   </QLayout>
 </template>
 

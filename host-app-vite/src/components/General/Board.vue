@@ -2,7 +2,7 @@
   <QCard square flat class="row justify-center main-board">
     <QCard square class="col-11 inner-board">
       <QCardSection v-if="loading" class="q-pa-none" style="height:4px">
-        <q-linear-progress  indeterminate />
+        <QLinearProgress  indeterminate />
       </QCardSection>
       <slot></slot>
     </QCard>

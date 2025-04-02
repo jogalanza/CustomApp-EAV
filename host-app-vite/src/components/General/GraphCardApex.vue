@@ -1,6 +1,6 @@
 <template>
   <QCard flat class="graph-card q-pb-md">
-    <q-linear-progress indeterminate v-show="loading > 0" color="green" />
+    <QLinearProgress indeterminate v-show="loading > 0" color="green" />
     <QToolbar class="chart-toolbar q-py-sm q-px-md">
       <slot name="chart-toolbar">
         <QBtn round flat icon="o_download" dense size="sm"><QTooltip>Download</QTooltip></QBtn>
@@ -28,9 +28,9 @@
         borderless />
     </QCardSection>
 
-    <!-- <q-dialog v-model="dialog" maximized>
+    <!-- <QDialog v-model="dialog" maximized>
       <QCard class="graph-card-fs">
-        <q-linear-progress indeterminate v-show="loading > 0" color="green" />
+        <QLinearProgress indeterminate v-show="loading > 0" color="green" />
         <QToolbar>          
           <div class="card-title">{{ `${options.title ?? title}` }}</div>
           <QBtn v-if="dirty" round flat icon="o_save" dense @click="SaveChanges"><QTooltip>Save Changes</QTooltip></QBtn>
@@ -57,7 +57,7 @@
           </div>
         </QCardSection>
       </QCard>
-    </q-dialog> -->
+    </QDialog> -->
   </QCard>
 </template>
 

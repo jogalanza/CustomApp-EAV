@@ -94,7 +94,7 @@
 
     <!-- :year-only="mode === 'bowler'" -->
 
-    <q-dialog v-model="invalidSession" persistent>
+    <QDialog v-model="invalidSession" persistent>
       <QCard>
         <QToolbar>
           <QToolbarTitle class="text-h6">Invalid Session</QToolbarTitle>
@@ -112,7 +112,7 @@
           <QBtn label="Try again" color="primary" @click="Reload" no-caps />
         </QCard-actions>
       </QCard>
-    </q-dialog>
+    </QDialog>
   </BoardLayout>
 </template>
 

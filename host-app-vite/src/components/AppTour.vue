@@ -1,5 +1,5 @@
 <template>
-  <q-dialog v-model="dialog">
+  <QDialog v-model="dialog">
     <QCard class="app-tour">
       <QCardSection class="header">
         <div class="text-h5">{{ title }}</div>
@@ -22,7 +22,7 @@
         </div>
       </QCard-actions>
     </QCard>
-  </q-dialog>
+  </QDialog>
 </template>
 
 <style lang="scss">

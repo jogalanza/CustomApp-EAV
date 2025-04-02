@@ -1,5 +1,5 @@
 <template>
-  <q-dialog v-model="dialog" persistent>
+  <QDialog v-model="dialog" persistent>
     <QCard class="bg-red text-white">
       <QToolbar>
           <QAvatar v-if="icon !== null" :icon="icon" text-color="white" size="60px" />
@@ -14,7 +14,7 @@
         <div style="font-size: 0.9em">{{ calcMsg2 }}</div>
       </QCardSection>
     </QCard>
-  </q-dialog>
+  </QDialog>
 </template>
 
 <style scoped>

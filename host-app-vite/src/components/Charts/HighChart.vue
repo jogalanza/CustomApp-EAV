@@ -48,7 +48,7 @@
       </q-inner-loading>
     </QCardSection>
 
-    <q-dialog persistent maximized v-model="dialog">
+    <QDialog persistent maximized v-model="dialog">
       <QCard :class="{'modern-beta-dialog': GetDarkModeBeta}">
         <QToolbar class="chart-toolbar">
           <QBtn v-if="level > 1" icon="mdi-arrow-left" dense rounded flat @click="ChartLevelUp">
@@ -65,7 +65,7 @@
           </q-inner-loading>
         </QCardSection>
       </QCard>
-    </q-dialog>
+    </QDialog>
   </QCard>
 </template>
 

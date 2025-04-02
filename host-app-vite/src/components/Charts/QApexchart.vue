@@ -6,7 +6,7 @@
       <q-spinner v-if="loading" />
     </QToolbar>
     <QCardSection class="q-pa-none q-pb-sm" :style="`height: calc(100% - ${(chartOnly ? '0' : '50')}px)`">
-      <q-linear-progress v-if="loading && chartOnly" />
+      <QLinearProgress v-if="loading && chartOnly" />
       <apexchart ref="chart" height="100%" width="100%" :options="chartOptions" :series="_series"></apexchart>
     </QCardSection>
   </QCard>
